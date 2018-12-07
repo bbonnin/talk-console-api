@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demos</title>
+    <style type="text/css">
+    .btn {
+        background: "black";
+        color: "white";
+        font-size: 1em;
+        margin: 1em;
+        padding: 0.25em 1em;
+        border: 2px solid black;
+        border-radius: 3px;
+    }
+    </style>
+</head>
+<body>
+    <!-- span>
+    &#9660;
+    &#9654;
+    &#9888;
+    &#124;
+    </span-->
+
+    <p><button class="btn" onclick="dir()">dir</button></p>
+    <p><button class="btn" onclick="groups()">group</button></p>
+    <p><button class="btn" onclick="time()">time</button></p>
+    <p><button class="btn" onclick="profile()">profile</button></p>
+    <p><button class="btn" onclick="timestamp()">timestamp</button></p>
+    <p><button class="btn" onclick="table()">table</button></p>
+
+    <script>
+        function dir() {
+            console.dir(document)
+        }
+
+        function groups() {
+            console.log('Debut traitement')
+            console.group('Sous Traitement Niveau 1')
+            console.warn('Mon traitement de sous-niveau 1')
+            console.groupCollapsed('Sous Traitement Niveau 2')
+            console.error('Mon traitement de sous-niveau 2')
+            console.groupEnd()
+            console.warn('Retour au sous-niveau 1')
+            console.groupEnd()
+        }
+
+        function profile() {
+            console.profile()
+            let total = 0
+            for (let i = 1; i <= 1000000000; i++) {
+                total += 1
+            }
+            console.profileEnd()
+        }
+
+        function time() {
+            console.time('traitement complet')
+            
+            console.time('initialisation tableau')
+            var arr = new Array(100000)
+            console.timeEnd('initialisation tableau')
+            
+            for (var i = 0; i < arr.length; i++) {
+              arr[i] = new Object()
+            }
+
+            console.timeEnd('traitement complet')
+        }
+
+        function timestamp() {
+            console.timeStamp('Go!')
+            time()
+            console.timeStamp('Stoooop')
+        }
+
+        function table() {
+            let data = [
+                { name: "Alice", age: 30 },
+                { age: 25, name: "Bob" },
+                { name: "Charlie", age: 45 }
+            ]
+
+            console.table(data)
+        }
+    </script>
+
+
+</body>
+</html>
