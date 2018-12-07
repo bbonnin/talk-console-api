@@ -9,7 +9,7 @@ export default class Code extends React.Component {
     let title = this.props.title
 
     return (
-      <Highlight {...defaultProps} theme={theme} code={code} language="python">
+      <Highlight {...defaultProps} theme={theme} code={code} language="javascript">
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <div style={{height: '100vh', width: '50vw', background: 'rgb(1, 22, 39)', color: 'rgb(214, 222, 235)',
             display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
@@ -18,15 +18,15 @@ export default class Code extends React.Component {
               
               <h1>{title}</h1>
 
-              <div style={{flexGrow: '1', display: 'flex', alignItems: 'flex-start', overflow: 'hidden', transform: 'scale(0.9)'}}>
+              <div style={{flexGrow: '1', display: 'flex', alignItems: 'center', overflow: 'hidden', transform: 'scale(1.0)'}}>
 
-                <pre>
+                <pre style={{marginTop: '0px'}}>
 
                   <div style={{position: 'relative'}}>
                 
                     <code className={className, 'scroll-content'} style={Object.assign(
                         {},
-                        { display: "inline-block", textAlign: "left", width: "100%" },
+                        { display: "inline-block", textAlign: "left", width: "100%", fontFamily: "Menlo, monospace" },
                         style
                       )}>
                       {tokens.map((line, i) => (

@@ -18,7 +18,7 @@ const Image = styled.img([], {
   objectFit: 'contain'
 })
 
-const Title = styled.h2([], {
+const Title = styled.h1([], {
   color: 'white'
 }, props => props.css,
   color
