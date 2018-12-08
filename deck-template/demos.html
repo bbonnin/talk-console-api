@@ -28,8 +28,16 @@
     <p><button class="btn" onclick="profile()">profile</button></p>
     <p><button class="btn" onclick="timestamp()">timestamp</button></p>
     <p><button class="btn" onclick="table()">table</button></p>
+    <p><button class="btn" onclick="assert()">assert</button></p>
 
     <script>
+        function assert() {
+            let a = 42
+            let b = 84
+            console.assert(a === b, { msg: "a and b are not equal", a, b })
+            console.assert(a === b, "a and b are not equal: %d != %d", a, b)
+        }
+
         function dir() {
             console.dir(document)
         }

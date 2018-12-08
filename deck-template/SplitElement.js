@@ -35,7 +35,7 @@ export default class SplitElement extends React.Component {
   render() {
     let title = ''
     let subtitle = ''
-    let img = ''
+    let img = []
     let others = ''
 
     if (this.props.title) {
@@ -47,7 +47,9 @@ export default class SplitElement extends React.Component {
     }
 
     if (this.props.img) {
-      img = <Image src={ this.props.img }/>
+      const images = this.props.img.split(',')
+      images.forEach(i => img.push(<Image src={ i }/>))
+      //img = <Image src={ this.props.img }/>
     }
 
     if (this.props.children) {

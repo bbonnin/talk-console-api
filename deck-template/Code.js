@@ -18,7 +18,7 @@ export default class Code extends React.Component {
               
               <h1>{title}</h1>
 
-              <div style={{flexGrow: '1', display: 'flex', alignItems: 'center', overflow: 'hidden', transform: 'scale(1.0)'}}>
+              <div style={{flexGrow: '1', display: 'flex', alignItems: 'center', overflow: 'hidden', transform: 'scale(0.9)'}}>
 
                 <pre style={{marginTop: '0px'}}>
 
