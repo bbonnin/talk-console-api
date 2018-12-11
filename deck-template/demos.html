@@ -22,15 +22,69 @@
     &#124;
     </span-->
 
-    <p><button class="btn" onclick="dir()">dir</button></p>
+    <p><button class="btn" onclick="count()">count</button></p>
+    <p><button class="btn" onclick="infoWarnError()">infoWarnError</button></p>
+    <p><button class="btn" onclick="log()">log</button></p>
+    <p><button class="btn" onclick="cdir()">dir</button></p>
     <p><button class="btn" onclick="groups()">group</button></p>
     <p><button class="btn" onclick="time()">time</button></p>
     <p><button class="btn" onclick="profile()">profile</button></p>
     <p><button class="btn" onclick="timestamp()">timestamp</button></p>
     <p><button class="btn" onclick="table()">table</button></p>
     <p><button class="btn" onclick="assert()">assert</button></p>
+    <p><button class="btn" onclick="demo_trace()">trace</button></p>
 
     <script>
+        function fct_1() {
+            fct_2()
+        }
+        function fct_2() {
+            fct_3()
+        }
+        function fct_3() {
+            console.trace('ici')
+        }
+        function demo_trace() {
+            fct_1()
+        }
+
+        function count() {
+            function hello(name) {
+                console.count('# hello ' + name)
+                return 'Hello ' + name + '!'
+            }
+
+            console.log(`
+function hello(name) {
+    console.count('# hello ' + name)
+    return 'Hello ' + name + '!'
+}
+                `)
+
+            hello('Alice')
+            hello('Alice')
+            hello('Bob')
+
+            console.countReset('# hello Alice')
+            console.log("countReset invoked")
+            hello('Alice')
+        }
+        function log() {
+            console.log('Hello')
+            console.log('Length of "%s" = %d', 
+                'Alice', 'Alice'.length)
+            console.log('Hello %cBob', 
+                `color:white; background-color:red; 
+                 padding:10px; border-radius: 50%`);
+        }
+
+        function infoWarnError() {
+            console.debug("C'est parti !")
+            console.info("Jusqu'ici, tout va bien...")
+            console.warn("Ca sent le pâté !")
+            console.error("Proutch !!!")
+        }
+
         function assert() {
             let a = 42
             let b = 84
@@ -38,19 +92,21 @@
             console.assert(a === b, "a and b are not equal: %d != %d", a, b)
         }
 
-        function dir() {
+        function cdir() {
             console.dir(document)
+            console.dirxml(document)
         }
 
         function groups() {
-            console.log('Debut traitement')
-            console.group('Sous Traitement Niveau 1')
-            console.warn('Mon traitement de sous-niveau 1')
-            console.groupCollapsed('Sous Traitement Niveau 2')
-            console.error('Mon traitement de sous-niveau 2')
+            console.log('%cDebut des traitements', 'color:white; background-color: green')
+            console.group('Traitement Niveau 1 (-> group)')
+            console.warn('Mon traitement de niveau 1')
+            console.groupCollapsed('Traitement Niveau 2 (-> groupCollapsed)')
+            console.error('Mon traitement de niveau 2')
             console.groupEnd()
-            console.warn('Retour au sous-niveau 1')
+            console.warn('Retour au niveau 1')
             console.groupEnd()
+            console.log('%cFin des traitements', 'color:white; background-color: green')
         }
 
         function profile() {

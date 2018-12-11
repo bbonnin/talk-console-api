@@ -1,6 +1,6 @@
 console.log('Hello')
 
-console.log('len(%s) = %d', 
+console.log('Length of "%s" = %d', 
 	'Alice', 'Alice'.length)
 
 console.log('Hello %cBob', 

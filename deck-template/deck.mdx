@@ -97,6 +97,14 @@ fort utiles!
 
 ---
 
+export default Split
+
+<Code title="Log" code={require("!raw-loader!./snippets/log.js")}/>
+
+<SplitElement img="img/log_ff.png,img/log_chrome.png" backgroundColor="white" color="white"/>
+
+---
+
 <CodeSurfer
   title="log, mais pas que..."
   code={require("!raw-loader!./snippets/debug-info-warn-error.js")}
@@ -111,6 +119,14 @@ fort utiles!
 
 ---
 
+export default Split
+
+<Code title="log, mais pas que..." code={require("!raw-loader!./snippets/debug-info-warn-error.js")}/>
+
+<SplitElement img="img/debug-info-warn-error-ff.png,img/debug-info-warn-error-chrome.png" backgroundColor="white" color="white"/>
+
+---
+
 <CodeSurfer
   title="dir (pour les objets)"
   code={require("!raw-loader!./snippets/dir.js")}
@@ -122,6 +138,14 @@ fort utiles!
     { range: [15, 24], notes: "... alors que log affiche le html" }
   ]}
 />
+
+---
+
+export default Split
+
+<Code title="dir (pour les objets)" code={require("!raw-loader!./snippets/dir-simple.js")}/>
+
+<SplitElement img="img/dir_ff.png,img/dirxml_chrome.png" backgroundColor="white" color="white" title="dir"/>
 
 ---
 
@@ -141,6 +165,14 @@ fort utiles!
 
 ---
 
+export default Split
+
+<Code title="Count / CountReset" code={require("!raw-loader!./snippets/count-simple.js")}/>
+
+<SplitElement img="img/count.png" backgroundColor="white" color="white" title="dir"/>
+
+---
+
 <CodeSurfer
   title="Group / GroupEnd"
   code={require("!raw-loader!./snippets/group.js")}
@@ -155,13 +187,43 @@ fort utiles!
 
 ---
 
+export default Split
+
+<Code title="Group / GroupEnd" code={require("!raw-loader!./snippets/group-simple.js")}/>
+
+<SplitElement img="img/group.png" backgroundColor="white" color="white" title="dir"/>
+
+---
+
+<CodeSurfer
+  title="Trace"
+  code={require("!raw-loader!./snippets/trace.js")}
+  lang="javascript"
+  showNumbers={false}
+  steps={[
+    { notes: "Stack trace d'un appel" }
+  ]}
+/>
+
+---
+
+export default Split
+
+<Code title="Trace" code={require("!raw-loader!./snippets/trace.js")}/>
+
+<SplitElement img="img/trace.png" backgroundColor="white" color="white" title="dir"/>
+
+---
+
 <CodeSurfer
   title="Time & co"
   code={require("!raw-loader!./snippets/time.js")}
   lang="javascript"
   showNumbers={false}
   steps={[
-    { notes: "Lancement / arrêt de timer" }
+    { notes: "Lancement / arrêt de timer" },
+    { range: [1, 5], notes: "Lancement / arrêt de timer" },
+    { range: [7, 19] }
   ]}
 />
 
@@ -176,6 +238,19 @@ fort utiles!
     { notes: "Marquage de la timeline" }
   ]}
 />
+
+---
+
+export default Split
+
+<Code title="TimeStamp" code={require("!raw-loader!./snippets/timestamp.js")}/>
+
+<SplitElement img="img/timestamp.png" backgroundColor="white" color="white" title="dir"/>
+
+```notes
+horodatage
+```
+
 
 ---
 
